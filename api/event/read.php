@@ -12,6 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     echo json_encode(['status' => 'success', 'data' => $data]);
 } else {
-    http_response_code(405); // Method Not Allowed
+    http_response_code(405); 
     echo json_encode(['status' => 'error', 'message' => 'Metode tidak didukung']);
 }

@@ -1,5 +1,5 @@
 <?php
-// Clear the login cookie and redirect to homepage
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }

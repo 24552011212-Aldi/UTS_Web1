@@ -20,8 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
 
         $safe_email = $koneksi->real_escape_string($email_input);
-
-        // 1. Ambil data user dari database berdasarkan email
+// 1. Ambil data user dari database berdasarkan email
+        
         $sql = "SELECT user_id, password FROM users WHERE email = '$safe_email'";
         $result = $koneksi->query($sql);
         $user = $result->fetch_assoc();

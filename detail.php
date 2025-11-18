@@ -1,12 +1,6 @@
 <?php
-// Tiga baris ini akan menampilkan error PHP di browser
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-// ...
 
 session_start();
-// PERHATIKAN JALUR INI: Pastikan 'api/koneksi.php' adalah jalur yang benar
 include 'api/koneksi.php';
 
 $itemId = $_GET['id'] ?? null;
@@ -14,42 +8,40 @@ $item = null;
 $pageTitle = "Detail Informasi";
 
 if ($itemId && is_numeric($itemId)) {
-    // Sanitasi ID
-    $safe_itemId = $koneksi->real_escape_string($itemId);
 
-    // PERBAIKAN 1: Ambil kolom 'tujuan' (dan 'content_type' jika ada) dari database
-    // Asumsi: Nama kolom Anda di database menggunakan 'T' besar. Jika tidak, ganti 'Judul', 'konten', dll.
+    $safe_itemId = $koneksi->real_escape_string($itemId);
+    
     $sql = "SELECT *, tujuan FROM informasi WHERE id = '$safe_itemId'";
     $result = $koneksi->query($sql);
 
     if ($result && $result->num_rows > 0) {
         $item = $result->fetch_assoc();
 
-        // Casing kolom: Dipertahankan 'Judul'
+       
         $pageTitle = htmlspecialchars($item['Judul']);
 
-        // Tambahkan content_type default jika tidak ada di DB, atau baca dari DB
+       
         $item['content_type'] = $item['content_type'] ?? 'General';
 
-        // Tambahkan tujuan default agar tidak error jika tidak ada di query/DB
+       
         $item['tujuan'] = $item['tujuan'] ?? 'Tujuan tidak didefinisikan.';
     }
 }
-// Logika default/error jika $item === null
+
 if ($item === null) {
     $item = [
         'Judul' => 'Informasi Tidak Ditemukan',
         'content_type' => 'Error',
         'konten' => 'Maaf, ID informasi yang Anda cari (ID: ' . htmlspecialchars($itemId ?? 'kosong') . ') tidak tersedia dalam database kami.',
-        'tujuan' => 'Informasi ini tidak memiliki tujuan spesifik.' // Tambahkan tujuan default
+        'tujuan' => 'Informasi ini tidak memiliki tujuan spesifik.'
     ];
 }
 
-// Definisikan variabel untuk digunakan di bagian HTML
+
 $infoTitle = $item['Judul'];
 $infoContent = $item['konten'];
 $contentType = $item['content_type'] ?? 'General';
-// Memuat Header
+
 include 'includes/header.php';
 ?>
 
@@ -61,7 +53,6 @@ include 'includes/header.php';
             <header class="mb-4 border-bottom pb-3">
 
                 <?php
-                // Mapping class untuk badge
                 $badgeClass = match ($contentType) {
                     'Strategy' => 'bg-success',
                     'Corporate' => 'bg-info',
@@ -104,7 +95,7 @@ include 'includes/header.php';
                 <?php endif; ?>
 
                 <div class="mt-5 pt-3 border-top">
-                    <a href="index.php" class="btn btn-primary">
+                    <a href="dashboard.php" class="btn btn-primary">
                         <i class="fas fa-arrow-left me-1"></i> Kembali ke Beranda
                     </a>
                 </div>

@@ -16,22 +16,25 @@ if (!empty($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
     <title><?= $pageTitle ?? 'Web Event'; ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/UTS_WEB1_TIF-RP-23-CNS_Event/css/style.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">NgeEvent</a>
+            <a class="navbar-brand fw-bold text-light" href="index.php">
+                <i class="fas fa-calendar-check me-2"></i>NgeEvent
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                        <a class="nav-link" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Find Event</a>
+                        <a class="nav-link" href="dashboard.php">Find Event</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.php">About</a>

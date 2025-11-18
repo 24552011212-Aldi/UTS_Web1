@@ -1,4 +1,4 @@
-<footer class="text-center py-3 bg-dark text-white mt-5 fixed-bottom">
+<footer class="text-center py-3 bg-dark text-white mt-5 ">
     <p>@Copyright by 24552011212_Aldi Alfariz_TIF RP-23 CNS A</p>
 </footer>
 

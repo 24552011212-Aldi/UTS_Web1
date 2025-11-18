@@ -1,18 +1,14 @@
 <?php
-// Tentukan judul halaman
+
 $pageTitle = "Hubungi Kami - NgeEvent";
-// Memuat Header (Navbar, Link CSS, Pembuka Body)
+
 include 'includes/header.php';
 ?>
-
 <style>
-    /* Mengubah tinggi peta */
-    .map-container {
+        .map-container {
         height: 450px;
-        /* Sedikit lebih tinggi */
         border-radius: 10px;
         overflow: hidden;
-        /* Memastikan peta tidak keluar dari border radius */
     }
 
     .contact-card {
@@ -21,9 +17,9 @@ include 'includes/header.php';
 
     .contact-card:hover {
         transform: translateY(-5px);
-        /* Efek hover ringan */
     }
 </style>
+
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
@@ -109,16 +105,13 @@ include 'includes/header.php';
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Inisialisasi peta dengan koordinat contoh (New York)
         var map = L.map('map').setView([-6.914744, 107.609810], 13);
 
-        // Menggunakan Dark Mode Tile (alternatif untuk tampilan modern)
         L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
             attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
             maxZoom: 20
         }).addTo(map);
 
-        // Marker
         L.marker([-6.914744, 107.609810]).addTo(map)
             .bindPopup('Bandung')
             .openPopup();
@@ -126,6 +119,5 @@ include 'includes/header.php';
 </script>
 
 <?php
-// Memuat Footer (Copyright, Link JS, Penutup Body)
 include 'includes/footer.php';
 ?>

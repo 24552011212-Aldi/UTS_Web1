@@ -1,7 +1,7 @@
 <?php
-// Tentukan judul halaman
+
 $pageTitle = "Tentang Kami - NgeEvent";
-// Memuat Header (Navbar, Link CSS, Pembuka Body)
+
 include 'includes/header.php';
 ?>
 
@@ -64,12 +64,7 @@ include 'includes/header.php';
     </div>
 </section>
 
-<section class="mb-5 text-center">
-    <h2 class="mb-4">Tim Kami</h2>
-    <p class="text-muted">Didukung oleh tim profesional yang berdedikasi.</p>
-</section>
-
 <?php
-// Memuat Footer (Copyright, Link JS, Penutup Body)
+
 include 'includes/footer.php';
 ?>
