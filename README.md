@@ -25,32 +25,33 @@ Before setting up the project, ensure you have the following:
 - **Web Browser:** Chrome, Firefox, or Safari for testing.
 
 ## folder structure 
-.
 └── UTS_WEB1_TIF-RP-23-CNS_Event/
+    ├── login.php
+    ├── profile.php
+    ├── register.php
+    ├── index.php
+    ├── contact.php
+    ├── detail.php
+    ├── about.php
+    ├── logout.php
+    ├── dashboard.php
+    ├── README.md
     ├── api/
-    │   ├── event/
-    │   │   ├── create.php
-    │   │   ├── delete.php
-    │   │   ├── read.php
-    │   │   └── update.php
+    │   ├── koneksi.php
     │   ├── user/
     │   │   └── create_user.php
-    │   └── koneksi.php
-    ├── include/
-    │   ├── footer.php
+    │   └── event/
+    │       ├── update.php
+    │       ├── create.php
+    │       ├── read.php
+    │       └── delete.php
+    ├── includes/
     │   ├── header.php
+    │   ├── footer.php
     │   └── header_db.php
     ├── js/
     │   └── script.js
-    ├── about.php
-    ├── contact.php
-    ├── dashboard.php
-    ├── detail.php
-    ├── index.php
-    ├── login.php
-    ├── logout.php
-    ├── profile.php
-    └── register.php
+
 
 
 ## Installation & Setup Instructions
