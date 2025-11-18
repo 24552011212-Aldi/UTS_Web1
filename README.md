@@ -25,6 +25,8 @@ Before setting up the project, ensure you have the following:
 - **Web Browser:** Chrome, Firefox, or Safari for testing.
 
 ## folder structure 
+
+```javascript
 └── UTS_WEB1_TIF-RP-23-CNS_Event/
     ├── login.php
     ├── profile.php
@@ -51,6 +53,8 @@ Before setting up the project, ensure you have the following:
     │   └── header_db.php
     ├── js/
     │   └── script.js
+```
+
 
 
 
