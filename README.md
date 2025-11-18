@@ -1,28 +1,54 @@
 # UTS_Web1
 
-# UTS_Web1
 
-## Project Overview
+## NgeEvent.com - Platform Informasi Event
+```
+Name    : Aldi Alfariz 
+NIM     : 24552011212
+Kelas   : TIF RP-23 CNS A
+```
 
-This repository contains the code for UTS_Web1, a web application built using JavaScript and PHP. This project provides functionalities across user and event management, incorporating front-end and back-end components.
+## Project Deskripsi
+ NgeEvent.com adalah platform informasi dari berbagai event dan informasi terbaru. website ini dibangun sebagai tugas UTS web pemograman 1 fokus pada pengembangan menggunakan PHP narative dan MySQL.  
 
-## Key Features & Benefits
+## Fitur 
+- **User Registrasi** - Pendaftaran dengan validasi
+- **User Login** - System Login
+- **Dashboard User** - Halaman Personal untuk User
+- **Logout** - system Logout
+- **Add Event** - pengguna dpt menambahkan event/informasi baru (jika sempat)
 
-- **User Management:** Create and manage user accounts.
-- **Event Management:** Create, read, update, and delete events.
-- **Client-Side Validation:** Implements client-side login validation using JavaScript.
-- **Database Connectivity:** Utilizes PHP scripts to interact with a database (likely MySQL).
-- **Modular Structure:** Organized directory structure separating API, user management, and includes.
+## Pages
+- **HoomePage** - Halaman utama user
+- **Find Event** - Kumpulan Informasi dan event yang ada
+- **Detail Event** - halaman detail tentang event dan informasi
+- **About Page** - informasi tentang platform
+- **Contact Page** - Halaman Kontak dengan map dan informasi
 
-## Prerequisites & Dependencies
+## API EndPoint
+API endpoint untuk CRUD:
+- ``POST /api/event/create.php`` - Membuat data event
+- ``POST /api/event/delete.php`` - Menghapus data event
+- ``GET /api/event/read.php`` - Mengambil data event
+- ``POST /api/event/update.php`` - Memperbaharui data event
 
-Before setting up the project, ensure you have the following:
+## Teknology yang di gunakan
+**FrontEnd**
+- **HTML5**  
+- **Bootstrap**  
+- **JavaScript**   
 
-- **Web Server:** Apache or Nginx.
-- **PHP:** Version 7.0 or higher.
-- **MySQL:** Or any other compatible database server.
-- **Text Editor/IDE:** VSCode, Sublime Text, or similar.
-- **Web Browser:** Chrome, Firefox, or Safari for testing.
+**BackEnd**
+- **PHP**  
+- **MySQL**  
+- **PDO** 
+
+**Develoyment Tolls**
+- **Xampp**  
+- **Postman**  
+- **GitHub web**  
+- **VsCode**  
+
 
 ## folder structure 
 
@@ -54,11 +80,52 @@ Before setting up the project, ensure you have the following:
     ├── js/
     │   └── script.js
 ```
+## DataBase Schema
 
+**Table User**
+``
+CREATE TABLE `users` (
+  `user_id` INT NOT NULL AUTO_INCREMENT,
+  `nama_lengkap` VARCHAR(50) NOT NULL,
+  `email` VARCHAR(50) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
+  `join_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`user_id`)
+)
+``
 
+**Table Informasi**
+`` 
+CREATE TABLE `infromasi` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `Judul` VARCHAR(255) NOT NULL,
+  `konten` VARCHAR(5000) NOT NULL,
+  `content_type` VARCHAR(55) NOT NULL,
+  `tujuan` VARCHAR(255) NOT NULL,
+  `tanggal_publikasi` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+)
+
+``
+
+## Key Features & Benefits
+
+- **User Management:** Create and manage user accounts.
+- **Event Management:** Create, read, update, and delete events.
+- **Client-Side Validation:** Implements client-side login validation using JavaScript.
+- **Database Connectivity:** Utilizes PHP scripts to interact with a database (likely MySQL).
+- **Modular Structure:** Organized directory structure separating API, user management, and includes.
 
 
 ## Installation & Setup Instructions
+
+Before setting up the project, ensure you have the following:
+
+- **Web Server:** Apache or Nginx.
+- **PHP:** Version 7.0 or higher.
+- **MySQL:** Or any other compatible database server.
+- **Text Editor/IDE:** VSCode, Sublime Text, or similar.
+- **Web Browser:** Chrome, Firefox, or Safari for testing.
 
 1. **Clone the Repository:**
 
@@ -85,7 +152,7 @@ Before setting up the project, ensure you have the following:
      $host   = "localhost";
      $user   = "your_username";
      $pass   = "your_password";
-     $db     = "your_database_name";
+     $db     = "Event.info";
 
      $koneksi = mysqli_connect($host, $user, $pass, $db);
 
@@ -104,39 +171,29 @@ Before setting up the project, ensure you have the following:
 
    - Open your web browser and navigate to the project URL (e.g., `http://localhost/UTS_Web1/index.php`).
 
-## Usage Examples & API Documentation
-
-### Client-Side Login (JavaScript)
-
-The `js/script.js` file contains a simple login function:
-
-```javascript
-const VALID_USERNAME = "user";
-const VALID_PASSWORD = "123";
-
-function handleLogin() {
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-    
-    // Struktur Percabangan If
-    if (username === VALID_USERNAME && password === VALID_PASSWORD) {
-        alert("Login Berhasil! (client-side)");
-        window.location.href = 'dashboard.php';
-    } else {
-        alert("Login Gagal! Username atau Password salah.");
-    }
-}
-```
-
-### API Endpoints (PHP)
-
-- **Create Event:** `api/event/create.php`
-- **Read Event:** `api/event/read.php`
-- **Update Event:** `api/event/update.php`
-- **Delete Event:** `api/event/delete.php`
-- **Create User:** `api/user/create_user.php`
-
 These endpoints typically receive and return data in JSON format.  Refer to the source code of each PHP file for specific parameters and expected responses.
+
+## API Documentation
+**GET /event/read.php**
+Mengambil Data
+
+**POST /event/create.php**
+**Body:**
+``
+{
+    "Judul": "IDCamp Virtual Roadshow x WTM - Beyond Bias: Perempuan, Data, dan Kesetaraan di Era AI",
+    "konten": "Pemberitahuan penting tentang pembaruan keamanan server dan perubahan kata sandi wajib.",
+    "content_type": "Seminar", 
+    "tujuan": "Update Keamanan Sistem."
+}
+``
+
+**POST /event/delete.php**
+Delete Data By Id
+
+**POST /event/update.php**
+Update data
+
 
 ## Configuration Options
 
@@ -165,8 +222,5 @@ This project does not currently have a specified license. All rights are reserve
 - Thanks to any third-party libraries or resources used in the project. Specific credits can be added here as needed.
 
 
-## Authors
-
-Name    : Aldi Alfariz 
-NIM     : 24552011212
-Kelas   : TIF RP-23 CNS A
+## Author
+Aldi Alfariz 24552011212 TIF RP-24 CNS A
