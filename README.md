@@ -83,19 +83,19 @@ API endpoint untuk CRUD:
 ## DataBase Schema
 
 **Table User**
-``
-CREATE TABLE `users` (
-  `user_id` INT NOT NULL AUTO_INCREMENT,
-  `nama_lengkap` VARCHAR(50) NOT NULL,
-  `email` VARCHAR(50) NOT NULL,
-  `password` VARCHAR(255) NOT NULL,
-  `join_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`user_id`)
+```
+CREATE TABLE 'users' (
+  'user_id' INT NOT NULL AUTO_INCREMENT,
+  'nama_lengkap' VARCHAR(50) NOT NULL,
+  'email' VARCHAR(50) NOT NULL,
+  'password' VARCHAR(255) NOT NULL,
+  'join_date' TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY ('user_id')
 )
-``
+```
 
 **Table Informasi**
-`` 
+```
 CREATE TABLE `infromasi` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `Judul` VARCHAR(255) NOT NULL,
@@ -105,8 +105,7 @@ CREATE TABLE `infromasi` (
   `tanggal_publikasi` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 )
-
-``
+```
 
 ## Key Features & Benefits
 
@@ -179,14 +178,14 @@ Mengambil Data
 
 **POST /event/create.php**
 **Body:**
-``
+```
 {
     "Judul": "IDCamp Virtual Roadshow x WTM - Beyond Bias: Perempuan, Data, dan Kesetaraan di Era AI",
     "konten": "Pemberitahuan penting tentang pembaruan keamanan server dan perubahan kata sandi wajib.",
     "content_type": "Seminar", 
     "tujuan": "Update Keamanan Sistem."
 }
-``
+```
 
 **POST /event/delete.php**
 Delete Data By Id
