@@ -53,33 +53,50 @@ API endpoint untuk CRUD:
 ## folder structure 
 
 ```javascript
+.
 └── UTS_WEB1_TIF-RP-23-CNS_Event/
-    ├── login.php
-    ├── profile.php
-    ├── register.php
-    ├── index.php
-    ├── contact.php
-    ├── detail.php
-    ├── about.php
-    ├── logout.php
-    ├── dashboard.php
-    ├── README.md
     ├── api/
-    │   ├── koneksi.php
+    │   ├── event/
+    │   │   ├── create.php
+    │   │   ├── delete.php
+    │   │   ├── update.php
+    │   │   └── read.php
     │   ├── user/
     │   │   └── create_user.php
-    │   └── event/
-    │       ├── update.php
-    │       ├── create.php
-    │       ├── read.php
-    │       └── delete.php
+    │   └── koneksi.php
+    ├── assets/
+    │   └── img/
+    ├── css/
+    │   └── style.php
     ├── includes/
-    │   ├── header.php
     │   ├── footer.php
-    │   └── header_db.php
+    │   └── header.php
     ├── js/
     │   └── script.js
+    ├── about.php
+    ├── contact.php
+    ├── dashboard.php
+    ├── detail.php
+    ├── index.php
+    ├── login.php
+    ├── logout.php
+    ├── profile.php
+    ├── register.php
+    └── README.md
 ```
+## CRUD postman Screenshot
+**Create**
+<img src="assets/img/create.png">
+
+**Delete**
+<img src="assets/img/delete.png">
+
+**Read**
+<img src="assets/img/read.png">
+
+**Update**
+<img src="assets/img/update.png">
+
 ## DataBase Schema
 
 **Table User**

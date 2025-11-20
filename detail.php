@@ -51,7 +51,6 @@ include 'includes/header.php';
 
 <div class="container my-5">
 
-    <!-- Breadcrumb Navigation -->
     <nav aria-label="breadcrumb" class="mb-3">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.php" class="text-decoration-none text-primary">Home</a></li>
@@ -59,14 +58,11 @@ include 'includes/header.php';
             <li class="breadcrumb-item active" aria-current="page"><?= $contentType; ?></li>
         </ol>
     </nav>
-    <!-- End Breadcrumb -->
 
     <div class="card shadow-lg p-md-5 p-3 border-0">
         <div class="card-body">
 
-            <!-- Ilustrasi Header (Banner/Image Placeholder) -->
             <?php
-            // Memilih gambar ilustrasi berdasarkan tipe konten
             $imageBanner = match ($contentType) {
                 'Strategy' => 'https://placehold.co/1200x300/1e3c72/ffffff?text=Strategi+Organisasi',
                 'Corporate' => 'https://placehold.co/1200x300/2a5298/ffffff?text=Pesan+Korporat',
@@ -79,7 +75,6 @@ include 'includes/header.php';
                 <img src="<?= $imageBanner; ?>" class="img-fluid w-100 h-100 object-cover" alt="Ilustrasi <?= $contentType; ?>"
                     style="object-fit: cover;">
             </div>
-            <!-- End Ilustrasi Header -->
 
 
             <header class="mb-4 border-bottom pb-3">
@@ -129,10 +124,8 @@ include 'includes/header.php';
                     </div>
                 <?php endif; ?>
 
-                <!-- Share Buttons & Aksi -->
                 <div class="d-flex justify-content-between align-items-center mt-5 pt-3 border-top">
 
-                    <!-- Share Buttons -->
                     <div>
                         <span class="text-muted me-3 d-none d-sm-inline">Bagikan:</span>
                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?= urlencode("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"); ?>"
@@ -149,7 +142,6 @@ include 'includes/header.php';
                         </a>
                     </div>
 
-                    <!-- Back Button -->
                     <a href="dashboard.php" class="btn btn-primary">
                         <i class="fas fa-arrow-left me-1"></i> Kembali ke Beranda
                     </a>
