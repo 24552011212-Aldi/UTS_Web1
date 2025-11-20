@@ -1,12 +1,9 @@
-const VALID_USERNAME = "user";
-const VALID_PASSWORD = "123";
-
 function handleLogin() {
-    const username = document.getElementById('username').value;
+    const nama_lengkap = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     
-    // Struktur Percabangan If
-    if (username === VALID_USERNAME && password === VALID_PASSWORD) {
+    
+    if (nama_lengkap === VALID_NAMA_LENGKAP && password === VALID_PASSWORD) {
         alert("Login Berhasil! (client-side)");
         window.location.href = 'dashboard.php';
     } else {

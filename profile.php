@@ -45,7 +45,7 @@ include 'includes/header.php';
 
                     <div class="d-flex align-items-center mb-4 border-bottom pb-4">
                         <img
-                            src="asset/Screenshot from 2025-11-04 16-05-58.png"
+                            src="assets/img/photo.png"
                             alt="Foto Profil"
                             class="rounded-circle me-4"
                             style="width: 100px; height: 100px; object-fit: cover; border: 3px solid #0d6efd;">
